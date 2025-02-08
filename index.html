@@ -283,6 +283,12 @@
             document.getElementById("photo").classList.add("visible"); // Exibe a foto com animação
             document.getElementById("message").classList.add("visible"); // Exibe a mensagem
             document.getElementById("audio").play(); // Reproduzir áudio
+
+            // Mostrar corações animados
+            var hearts = document.querySelectorAll('.heart');
+            hearts.forEach(function(heart) {
+                heart.style.display = 'block';
+            });
         }
 
         function goBack() {
@@ -291,17 +297,17 @@
         }
     </script>
 
-    <!-- Corações animados -->
-    <div class="heart"></div>
-    <div class="heart"></div>
-    <div class="heart"></div>
-    <div class="heart"></div>
-    <div class="heart"></div>
-    <div class="heart"></div>
-    <div class="heart"></div>
-    <div class="heart"></div>
-    <div class="heart"></div>
-    <div class="heart"></div>
+    <!-- Corações animados (inicialmente ocultos) -->
+    <div class="heart" style="display: none;"></div>
+    <div class="heart" style="display: none;"></div>
+    <div class="heart" style="display: none;"></div>
+    <div class="heart" style="display: none;"></div>
+    <div class="heart" style="display: none;"></div>
+    <div class="heart" style="display: none;"></div>
+    <div class="heart" style="display: none;"></div>
+    <div class="heart" style="display: none;"></div>
+    <div class="heart" style="display: none;"></div>
+    <div class="heart" style="display: none;"></div>
 
 </body>
 </html>
