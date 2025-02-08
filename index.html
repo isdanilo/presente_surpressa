@@ -24,7 +24,7 @@
         /* Brilho no título */
         h1 {
             color: #ffffff;
-            font-size: 50px;
+            font-size: 60px;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
             animation: glow 2s ease-in-out infinite alternate;
             margin: -15px 0;
@@ -32,6 +32,13 @@
             top: 5%;
             left: 50%;
             transform: translateX(-50%);
+        }
+
+        /* Aumentando o tamanho do título da segunda página */
+        #photoTitle {
+            font-size: 40px;
+            color: white;
+            margin-top: 20px;
         }
 
         @keyframes glow {
@@ -214,10 +221,14 @@
             animation-delay: 3.5s;
         }
 
-        /* Media Queries para responsividade */
+        /* Responsividade */
         @media (max-width: 768px) {
             h1 {
-                font-size: 35px;
+                font-size: 40px;
+            }
+
+            #photoTitle {
+                font-size: 30px;
             }
 
             .top-image {
@@ -230,36 +241,15 @@
             }
 
             .photo {
-                max-width: 80%;
+                max-width: 50%;
             }
 
-            .message {
-                font-size: 22px;
+            .heart {
+                width: 15px;
+                height: 15px;
             }
         }
 
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 30px;
-            }
-
-            .top-image {
-                max-width: 60%;
-            }
-
-            .button {
-                font-size: 16px;
-                padding: 10px 25px;
-            }
-
-            .photo {
-                max-width: 90%;
-            }
-
-            .message {
-                font-size: 20px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -288,41 +278,30 @@
             // Exibir a foto e a mensagem
             document.getElementById("photo-container").classList.remove("hidden");
             document.getElementById("topImage").classList.add("hidden"); // Esconde a imagem acima do botão
-            document.getElementById("specialTitle").classList.add("hidden");
-            document.getElementById("messageButton").classList.add("hidden");
-            document.getElementById("photo").classList.add("visible");
-            document.getElementById("message").classList.add("visible");
-
-            // Reproduzindo música
-            const audio = document.getElementById("audio");
-            audio.play();
-
-            // Criar e adicionar corações à tela
-            for (let i = 0; i < 10; i++) {
-                const heart = document.createElement("div");
-                heart.classList.add("heart");
-                document.body.appendChild(heart);
-            }
+            document.getElementById("specialTitle").classList.add("hidden"); // Esconde o título original
+            document.getElementById("messageButton").classList.add("hidden"); // Esconde o botão
+            document.getElementById("photo").classList.add("visible"); // Exibe a foto com animação
+            document.getElementById("message").classList.add("visible"); // Exibe a mensagem
+            document.getElementById("audio").play(); // Reproduzir áudio
         }
 
         function goBack() {
-            // Ocultar a foto e a mensagem, voltar para a primeira página e parar a música
-            document.getElementById("photo-container").classList.add("hidden");
-            document.getElementById("topImage").classList.remove("hidden"); // Mostrar a imagem acima do botão
-            document.getElementById("specialTitle").classList.remove("hidden");
-            document.getElementById("messageButton").classList.remove("hidden");
-            document.getElementById("photo").classList.remove("visible");
-            document.getElementById("message").classList.remove("visible");
-
-            // Parar a música
-            const audio = document.getElementById("audio");
-            audio.pause();
-            audio.currentTime = 0; // Volta para o início
-
-            // Remover corações da tela
-            const hearts = document.querySelectorAll(".heart");
-            hearts.forEach(heart => heart.remove());
+            // Redireciona de volta para a página inicial
+            window.location.reload();
         }
     </script>
+
+    <!-- Corações animados -->
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+
 </body>
 </html>
